@@ -54,21 +54,26 @@ $mobile: "screen and (max-width: 720px)";
       display: none;
     }
   }
-  &__container {
-    @media #{$mobile} {
-      width: 100%;
-      position: fixed;
-      left: 0;
-      top: 100%;
-      background-color: var(--foreground);
-      padding: calc(var(--space) / 2);
-      clip-path: inset(0 0 100% 0);
-      transition: clip-path 0.5s ease-in-out;
+
+  &--mobile {
+    #{$block}__container {
+      @media #{$mobile} {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 100%;
+        background-color: var(--foreground);
+        padding: calc(var(--space) / 2);
+        clip-path: inset(0 0 100% 0);
+        transition: clip-path 0.5s ease-in-out;
+      }
     }
   }
   &--active {
     #{$block}__container {
-      clip-path: inset(0 0 0 0);
+      @media #{$mobile} {
+        clip-path: inset(0 0 0 0);
+      }
     }
   }
   &__list {
@@ -76,9 +81,40 @@ $mobile: "screen and (max-width: 720px)";
     @media #{$mobile} {
       flex-direction: column;
     }
+    &--sub {
+      flex-direction: column;
+    }
   }
+
   &__item {
+    &--sub {
+      #{$block}__link {
+        padding: 0.5em 1em;
+      }
+    }
+    &:hover {
+      & > #{$block}__link {
+        background-color: var(--primary);
+        @at-root {
+          @keyframes buttonBump {
+            0%,
+            100% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.05);
+            }
+          }
+        }
+        animation: buttonBump 0.2s ease-in-out forwards;
+
+        &::before {
+          clip-path: inset(0 0 0 0%);
+        }
+      }
+    }
   }
+
   &__link {
     display: block;
     line-height: 1;
@@ -102,25 +138,6 @@ $mobile: "screen and (max-width: 720px)";
       z-index: 0;
       clip-path: inset(0 0 0 100%);
       transition: clip-path 0.3s ease-in-out;
-    }
-    &:hover {
-      background-color: var(--primary);
-      @at-root {
-        @keyframes buttonBump {
-          0%,
-          100% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.05);
-          }
-        }
-      }
-      animation: buttonBump 0.2s ease-in-out forwards;
-
-      &::before {
-        clip-path: inset(0 0 0 0%);
-      }
     }
   }
   &__text {

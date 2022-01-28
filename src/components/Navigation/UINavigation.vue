@@ -1,12 +1,18 @@
 <template>
   <nav
     class="ui-navigation"
-    :class="[active ? 'ui-navigation--active' : 'ui-navigation--inactive']"
+    :class="[
+      withToggle && 'ui-navigation--mobile',
+      active && withToggle
+        ? 'ui-navigation--active'
+        : 'ui-navigation--inactive',
+    ]"
   >
     <div class="ui-navigation__container">
       <UINavigationList :menu="menu" />
     </div>
     <button
+      v-if="withToggle"
       class="ui-navigation__toggle"
       @click="active = !active"
       aria-label="toggle menu"
@@ -17,14 +23,18 @@
 </template>
 <script lang="ts">
 import { defineComponent, PropType, ref } from "vue";
-import { MenuItem } from "../../types";
+import { UINavigationMenuItem } from "./UINavigation.model";
 import UINavigationList from "../Navigation/UINavigationList.vue";
 
 export default defineComponent({
   components: { UINavigationList },
   props: {
+    withToggle: {
+      type: Boolean,
+      default: false,
+    },
     menu: {
-      type: Array as PropType<MenuItem[]>,
+      type: Array as PropType<UINavigationMenuItem[]>,
       default: () => [],
     },
   },

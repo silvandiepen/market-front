@@ -8,35 +8,24 @@
   >
     <div class="ui-header__container">
       <h1 class="ui-header__logo">Storefront</h1>
-      <UINavigation class="ui-header__menu" :menu="menu" />
+      <UINavigation
+        class="ui-header__navigation"
+        :menu="menu"
+        :withToggle="true"
+      />
     </div>
   </section>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import { MenuItem } from "../types";
+import { UINavigation } from "./Navigation";
 import { useScroll } from "../composables";
-import UINavigation from "./Navigation/UINavigation.vue";
+
+import { menu } from "../mockData";
 
 export default defineComponent({
   components: { UINavigation },
   setup() {
-    const menu: MenuItem[] = [
-      {
-        label: "Shop",
-        link: "#shop",
-        children: [{ label: "Categories", link: "#shop-categories" }],
-      },
-      {
-        label: "About",
-        link: "#about",
-      },
-      {
-        label: "Contact",
-        link: "#contact",
-      },
-    ];
-
     const { isOnTop, isGoingDown } = useScroll({ treshhold: 10 });
 
     return {
@@ -72,6 +61,7 @@ export default defineComponent({
   &__logo {
     font-weight: 500;
     font-size: 1.5em;
+    line-height: 2;
   }
   &__menu {
   }
@@ -83,7 +73,7 @@ export default defineComponent({
 
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding: calc(var(--half-space) / 2) var(--half-space);
     // border: 1px solid blue;
     width: var(--container-width);
@@ -104,6 +94,44 @@ export default defineComponent({
   &--visible #{$block}__container {
     transform: translateY(0%);
     opacity: 1;
+  }
+
+  &__navigation {
+    @media screen and (max-width: getConfig(mobile)) {
+      .ui-navigation__sub {
+        display: none;
+      }
+    }
+    @media screen and (min-width: getConfig(mobile)) {
+      .ui-navigation__item {
+        position: relative;
+      }
+      .ui-navigation__sub {
+        opacity: 0;
+        display: block;
+        transform: scale(0.5) translateX(-50%);
+        transform-origin: 0 0%;
+        position: absolute;
+        left: 50%;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+        padding-top: 1em;
+      }
+      .ui-navigation__text {
+        white-space: nowrap;
+      }
+      .ui-navigation__list--sub {
+        border-radius: var(--border-radius);
+        padding: 1em;
+        background-color: var(--background);
+        color: var(--foreground);
+      }
+      .ui-navigation__item:hover .ui-navigation__sub {
+        transform: scale(1) translateX(-50%);
+        opacity: 1;
+        transform-origin: 0 50%;
+      }
+    }
   }
 }
 </style>

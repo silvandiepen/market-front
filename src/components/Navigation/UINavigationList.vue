@@ -5,14 +5,14 @@
 </template>
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import { MenuItem } from "../../types";
+import { UINavigationMenuItem } from "./UINavigation.model";
 import UINavigationItem from "./UINavigationItem.vue";
 
 export default defineComponent({
   components: { UINavigationItem },
   props: {
     menu: {
-      type: Array as PropType<MenuItem[]>,
+      type: Array as PropType<UINavigationMenuItem[]>,
       default: () => [],
     },
   },

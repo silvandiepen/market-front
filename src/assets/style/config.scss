@@ -8,6 +8,7 @@ $config: (
   space: max(2em, calc(100vw / 24)),
   half-space: max(2em, calc(var(--space) / 2)),
   max-width: 1200px,
+  mobile: 720px,
   container-width: min(100%, var(--max-width)),
   error: red,
   warning: orange,
