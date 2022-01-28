@@ -34,6 +34,9 @@ export default defineComponent({
     grid-area: description;
   }
 
+  .ui-image {
+    padding: calc(var(--space) / 2);
+  }
   .ui-description {
     display: flex;
   }

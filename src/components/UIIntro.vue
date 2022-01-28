@@ -1,11 +1,30 @@
 <template>
-  <section id="intro" class="ui-intro">
-    <h2><span>Welcome </span><span>to </span><span>Storefront</span></h2>
+  <section
+    id="intro"
+    class="ui-intro"
+    :style="`--ui-intro-background-image: url(${image})`"
+  >
+    <div class="ui-intro__background"></div>
+    <h2>
+      <span v-for="(word, index) in title.split(' ')" :key="index">{{
+        word
+      }}</span>
+    </h2>
   </section>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
 export default defineComponent({
+  props: {
+    title: {
+      type: String,
+      default: "",
+    },
+    image: {
+      type: String,
+      default: "",
+    },
+  },
   setup() {
     return {};
   },
@@ -26,6 +45,18 @@ export default defineComponent({
   clip-path: inset(0 0 0 0);
 
   animation: curtainUp 1s 2s forwards ease-in-out;
+
+  &__background {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-image: var(--ui-intro-background-image);
+    background-size: cover;
+    mix-blend-mode: darken;
+  }
 
   @at-root {
     @keyframes curtainUp {
@@ -53,15 +84,16 @@ export default defineComponent({
       transform: translateY(100%);
       display: inline-block;
       margin: 0.1em;
-      &:nth-child(1) {
-        animation: spanIn 1s 0s forwards ease-in-out;
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          animation: spanIn
+            1s
+            calc(((0.5 * #{$i}) - 0.5) * 1s)
+            forwards
+            ease-in-out;
+        }
       }
-      &:nth-child(2) {
-        animation: spanIn 1s 0.5s forwards ease-in-out;
-      }
-      &:nth-child(3) {
-        animation: spanIn 1s 1s forwards ease-in-out;
-      }
+
       @at-root {
         @keyframes spanIn {
           to {

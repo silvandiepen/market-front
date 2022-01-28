@@ -32,7 +32,7 @@ export default defineComponent({
 
   background-color: var(--button-background-color);
   color: var(--button-color);
-
+  display: inline-block;
   &:before {
     content: "";
     width: 100%;

@@ -24,7 +24,6 @@ export default defineComponent({
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: calc(var(--space) / 2);
 
     width: var(--container-width);
     margin: auto;

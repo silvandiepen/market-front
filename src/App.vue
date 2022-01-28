@@ -31,48 +31,68 @@ export default defineComponent({
     UIDescription,
   },
   setup() {
+    const description = `Fusce quis est eget nisi vestibulum feugiat in ut elit. Integer
+              bibendum vulputate urna, ac tristique urna ornare id. Etiam vitae
+              imperdiet felis, eu consequat libero. Vestibulum arcu metus,
+              luctus et ullamcorper eu, vulputate quis leo. Mauris convallis
+              mattis sollicitudin. Vestibulum dictum congue est at mollis. Etiam
+              egestas bibendum pharetra. Duis eu elit at leo ornare pharetra nec
+              feugiat nibh. Nullam sodales efficitur leo eu interdum. Cras ut
+              ultrices orci. In hac habitasse platea dictumst. Nulla facilisi.
+              Nam mi augue, porttitor tincidunt consequat eu, congue id lacus.
+              Aliquam gravida et purus quis pretium. Nulla eu tortor ac nunc
+              auctor malesuada.`;
+    const description2 = `Duis eu elit at leo ornare pharetra nec
+              feugiat nibh. Nullam sodales efficitur leo eu interdum. Cras ut
+              ultrices orci. In hac habitasse platea dictumst. Nulla facilisi.
+              Nam mi augue, porttitor tincidunt consequat eu, congue id lacus.
+              Aliquam gravida et purus quis pretium. Nulla eu tortor ac nunc
+              auctor malesuada.`;
+
     const columns: PanelColumn[] = [
       {
         title: "Woohoo",
-        description: `Fusce quis est eget nisi vestibulum feugiat in ut elit. Integer
-              bibendum vulputate urna, ac tristique urna ornare id. Etiam vitae
-              imperdiet felis, eu consequat libero. Vestibulum arcu metus,
-              luctus et ullamcorper eu, vulputate quis leo. Mauris convallis
-              mattis sollicitudin. Vestibulum dictum congue est at mollis. Etiam
-              egestas bibendum pharetra. Duis eu elit at leo ornare pharetra nec
-              feugiat nibh. Nullam sodales efficitur leo eu interdum. Cras ut
-              ultrices orci. In hac habitasse platea dictumst. Nulla facilisi.
-              Nam mi augue, porttitor tincidunt consequat eu, congue id lacus.
-              Aliquam gravida et purus quis pretium. Nulla eu tortor ac nunc
-              auctor malesuada.`,
+        description: description,
+        action: {
+          label: "Woohoo",
+          link: "#",
+        },
       },
       {
         title: "Yeahhh",
-        description: `Fusce quis est eget nisi vestibulum feugiat in ut elit. Integer
-              bibendum vulputate urna, ac tristique urna ornare id. Etiam vitae
-              imperdiet felis, eu consequat libero. Vestibulum arcu metus,
-              luctus et ullamcorper eu, vulputate quis leo. Mauris convallis
-              mattis sollicitudin. Vestibulum dictum congue est at mollis. Etiam
-              egestas bibendum pharetra. Duis eu elit at leo ornare pharetra nec
-              feugiat nibh. Nullam sodales efficitur leo eu interdum. Cras ut
-              ultrices orci. In hac habitasse platea dictumst. Nulla facilisi.
-              Nam mi augue, porttitor tincidunt consequat eu, congue id lacus.
-              Aliquam gravida et purus quis pretium. Nulla eu tortor ac nunc
-              auctor malesuada.`,
+        description: description,
+        action: {
+          label: "Woohoo",
+          link: "#",
+        },
       },
       {
         title: "Go Go Go!",
-        description: `Fusce quis est eget nisi vestibulum feugiat in ut elit. Integer
-              bibendum vulputate urna, ac tristique urna ornare id. Etiam vitae
-              imperdiet felis, eu consequat libero. Vestibulum arcu metus,
-              luctus et ullamcorper eu, vulputate quis leo. Mauris convallis
-              mattis sollicitudin. Vestibulum dictum congue est at mollis. Etiam
-              egestas bibendum pharetra. Duis eu elit at leo ornare pharetra nec
-              feugiat nibh. Nullam sodales efficitur leo eu interdum. Cras ut
-              ultrices orci. In hac habitasse platea dictumst. Nulla facilisi.
-              Nam mi augue, porttitor tincidunt consequat eu, congue id lacus.
-              Aliquam gravida et purus quis pretium. Nulla eu tortor ac nunc
-              auctor malesuada.`,
+        description: description,
+        action: {
+          label: "Woohoo",
+          link: "#",
+        },
+      },
+    ];
+    const columns2: PanelColumn[] = [
+      {
+        image:
+          "https://images.unsplash.com/photo-1617663516011-cd60a0de811d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&q=80",
+        title: "Woohoo",
+        description: description2,
+      },
+      {
+        image:
+          "https://images.unsplash.com/photo-1518331717677-3d0374dcfcd5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&q=80",
+        title: "Yeahhh",
+        description: description2,
+      },
+      {
+        image:
+          "https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&q=80",
+        title: "Go Go Go!",
+        description: description2,
       },
     ];
 
@@ -81,7 +101,7 @@ export default defineComponent({
         background: "primary",
         color: "background",
         image:
-          "https://images.unsplash.com/photo-1560961911-a21c4f35443f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2748&q=80",
+          "https://images.unsplash.com/photo-1560961911-a21c4f35443f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80",
         content: {
           title: "First Slide",
           subtitle: "Another slide on the wall",
@@ -93,7 +113,7 @@ export default defineComponent({
         background: "secondary",
         color: "foreground",
         image:
-          "https://images.unsplash.com/photo-1560961911-ba7ef651a56c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2748&q=80",
+          "https://images.unsplash.com/photo-1560961911-ba7ef651a56c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80",
         content: {
           title: "Second Slide",
           subtitle: "Another slide on the wall",
@@ -105,7 +125,7 @@ export default defineComponent({
         background: "warning",
         color: "background",
         image:
-          "https://images.unsplash.com/photo-1560961911-293cfd783727?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2748&q=80",
+          "https://images.unsplash.com/photo-1560961911-293cfd783727?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80",
         content: {
           title: "Third Slide",
           subtitle: "Another slide on the wall",
@@ -117,7 +137,7 @@ export default defineComponent({
         background: "foreground",
         color: "background",
         image:
-          "https://images.unsplash.com/photo-1560961911-0ac252fecc71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2748&q=80",
+          "https://images.unsplash.com/photo-1560961911-0ac252fecc71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80",
         content: {
           title: "Last Slide",
           subtitle: "Another slide on the wall",
@@ -127,7 +147,7 @@ export default defineComponent({
       },
     ];
 
-    return { slides, columns };
+    return { slides, columns, columns2 };
   },
 });
 </script>
@@ -135,8 +155,11 @@ export default defineComponent({
 <template>
   <UIHeader />
   <main id="container">
-    <UIIntro />
-    <UIPanel :columns="columns" />
+    <UIIntro
+      title="Welcome to Storefront"
+      image="https://images.unsplash.com/photo-1498747324273-943f73ca00b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3648&q=80"
+    />
+    <UIPanel :columns="columns2" />
     <UISlider :slides="slides" />
     <UIContent>
       <h2>A content section</h2>
@@ -232,7 +255,7 @@ export default defineComponent({
         src="https://images.unsplash.com/photo-1526505262320-81542978f63b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
       />
     </UIImageSection>
-    <UIPanel :columns="[columns[0], columns[1]]" />
+    <UIPanel :columns="[columns2[0], columns2[1]]" />
   </main>
   <UIFooter />
 </template>

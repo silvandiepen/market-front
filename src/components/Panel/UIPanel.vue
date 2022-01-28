@@ -8,8 +8,12 @@
       <div class="row" :class="`row--${inlineColumns}`">
         <div class="column" v-for="(column, index) in columns" :key="index">
           <div class="content">
+            <UIImage v-if="column.image" :src="column.image" />
             <h3>{{ column.title }}</h3>
             <p>{{ column.description }}</p>
+            <UIButton v-if="column.action" :link="column.action.link">{{
+              column.action.label
+            }}</UIButton>
           </div>
         </div>
       </div>
@@ -20,8 +24,14 @@
 import { defineComponent, watch, onMounted, ref, PropType } from "vue";
 import { useInview } from "../../composables/useUI";
 import { PanelColumn } from "./UIPanel.model";
+import UIButton from "../UIButton.vue";
+import UIImage from "../UIImage.vue";
 
 export default defineComponent({
+  components: {
+    UIButton,
+    UIImage,
+  },
   props: {
     columns: {
       type: Array as PropType<PanelColumn[]>,
