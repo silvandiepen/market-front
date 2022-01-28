@@ -5,7 +5,8 @@
   align-items: center;
   justify-content: center;
   transition: clip-path 1s ease-in-out;
-  overflow: hidden;
+  // overflow: hidden;
+  z-index: 2;
 
   --slide-width: min(calc(100% - (var(--space) * 2)), var(--max-width));
   $slide-margin: calc((100vw - var(--slide-width)) / 2);
@@ -39,14 +40,17 @@
     display: flex;
     font-size: 1em;
     padding: var(--half-space);
+    @media screen and (max-width: 720px) {
+      padding: 0;
+    }
   }
   &__dot {
     margin: 0;
     border: none;
     display: block;
 
-    width: 1.5em;
-    height: 1.5em;
+    width: 3rem;
+    height: 3rem;
     padding: 0;
     transition: transform 0.2s ease-in-out;
     background-color: transparent;
@@ -57,9 +61,13 @@
       content: "";
       display: block;
       border-radius: 50%;
-      width: 0.75em;
       background-color: var(--background);
-      height: 0.75em;
+
+      @media screen and (max-width: 720px) {
+        padding: 0;
+        width: 1.25rem;
+        height: 1.25rem;
+      }
     }
     &--active::before {
       background-color: var(--foreground);

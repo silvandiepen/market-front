@@ -55,15 +55,15 @@ export default defineComponent({
         description: description,
         action: {
           label: "Woohoo",
-          link: "#woohoo",
+          link: "/link/to/woohoo",
         },
       },
       {
         title: "Yeahhh",
         description: description,
         action: {
-          label: "Woohoo",
-          link: "#woohoo",
+          label: "Yeahhh",
+          link: "/link/to/yeahh",
         },
       },
       {
@@ -71,7 +71,7 @@ export default defineComponent({
         description: description,
         action: {
           label: "Woohoo",
-          link: "#gogogo",
+          link: "/link/to/gogogo",
         },
       },
     ];
@@ -98,7 +98,7 @@ export default defineComponent({
 
     const slides: Slide[] = [
       {
-        background: "primary",
+        background: "foreground",
         color: "background",
         image:
           "https://images.unsplash.com/photo-1560961911-a21c4f35443f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80",
@@ -110,8 +110,8 @@ export default defineComponent({
         },
       },
       {
-        background: "secondary",
-        color: "foreground",
+        background: "foreground",
+        color: "background",
         image:
           "https://images.unsplash.com/photo-1560961911-ba7ef651a56c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80",
         content: {
@@ -122,7 +122,7 @@ export default defineComponent({
         },
       },
       {
-        background: "warning",
+        background: "foreground",
         color: "background",
         image:
           "https://images.unsplash.com/photo-1560961911-293cfd783727?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80",
