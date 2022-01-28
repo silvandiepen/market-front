@@ -82,8 +82,10 @@ export default defineComponent({
     span {
       opacity: 0;
       transform: translateY(100%);
+      clip-path: inset(0 0 100% 0);
       display: inline-block;
       margin: 0.1em;
+
       @for $i from 1 through 5 {
         &:nth-child(#{$i}) {
           animation: spanIn
@@ -98,6 +100,7 @@ export default defineComponent({
         @keyframes spanIn {
           to {
             opacity: 1;
+            clip-path: inset(0 0 0% 0);
             transform: translateY(0%);
           }
         }
