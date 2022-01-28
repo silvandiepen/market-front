@@ -69,7 +69,12 @@ export default defineComponent({
   h2 {
     font-size: var(--space);
     display: flex;
+    flex-direction: row;
     animation: upALittle 1s 2s forwards ease-in-out;
+    @media screen and (max-width: 720px) {
+      flex-direction: column;
+      font-size: calc(var(--space) * 2);
+    }
 
     @at-root {
       @keyframes upALittle {
