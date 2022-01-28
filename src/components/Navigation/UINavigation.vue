@@ -6,7 +6,11 @@
     <div class="ui-navigation__container">
       <UINavigationList :menu="menu" />
     </div>
-    <button class="ui-navigation__toggle" @click="active = !active">
+    <button
+      class="ui-navigation__toggle"
+      @click="active = !active"
+      aria-label="toggle menu"
+    >
       <span></span>
     </button>
   </nav>
