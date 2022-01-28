@@ -5,7 +5,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import { MenuItem } from "../types";
+import { MenuItem } from "../../types";
 import UINavigationItem from "./UINavigationItem.vue";
 
 export default defineComponent({

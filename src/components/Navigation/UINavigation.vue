@@ -5,8 +5,8 @@
 </template>
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import { MenuItem } from "../types";
-import UINavigationList from "./UINavigationList.vue";
+import { MenuItem } from "../../types";
+import UINavigationList from "../Navigation/UINavigationList.vue";
 
 export default defineComponent({
   components: { UINavigationList },
