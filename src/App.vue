@@ -55,7 +55,7 @@ export default defineComponent({
         description: description,
         action: {
           label: "Woohoo",
-          link: "#",
+          link: "#woohoo",
         },
       },
       {
@@ -63,7 +63,7 @@ export default defineComponent({
         description: description,
         action: {
           label: "Woohoo",
-          link: "#",
+          link: "#woohoo",
         },
       },
       {
@@ -71,7 +71,7 @@ export default defineComponent({
         description: description,
         action: {
           label: "Woohoo",
-          link: "#",
+          link: "#gogogo",
         },
       },
     ];
