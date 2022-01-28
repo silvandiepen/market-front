@@ -1,6 +1,81 @@
+$desktop: "screen and (min-width: 720px)";
+$mobile: "screen and (max-width: 720px)";
+
 .ui-navigation {
+  $block: &;
+
+  &__toggle {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+
+    span {
+      &,
+      &:before,
+      &:after {
+        position: absolute;
+        display: block;
+        width: 1.5em;
+        height: 2px;
+        background-color: var(--background);
+        transition: 0.2s ease-in-out;
+      }
+      &:before,
+      &:after {
+        content: "";
+      }
+      &::before {
+        transform: translateY(-400%) rotate(0deg);
+      }
+      &::after {
+        transform: translateY(400%) rotate(0deg);
+      }
+    }
+    #{$block}--active & {
+      span {
+        background-color: transparent;
+      }
+      span::before {
+        transform: translateY(-0%) rotate(45deg);
+      }
+      span::after {
+        transform: translateY(-0%) rotate(-45deg);
+      }
+    }
+
+    @media #{$desktop} {
+      display: none;
+    }
+  }
+  &__container {
+    @media #{$mobile} {
+      width: 100%;
+      position: fixed;
+      left: 0;
+      top: 100%;
+      background-color: var(--foreground);
+      padding: calc(var(--space) / 2);
+      clip-path: inset(0 0 100% 0);
+      transition: clip-path 0.5s ease-in-out;
+    }
+  }
+  &--active {
+    #{$block}__container {
+      clip-path: inset(0 0 0 0);
+    }
+  }
   &__list {
     display: flex;
+    @media #{$mobile} {
+      flex-direction: column;
+    }
   }
   &__item {
   }
