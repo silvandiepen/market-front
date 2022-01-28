@@ -39,16 +39,24 @@
   </section>
 </template>
 <script lang="ts">
-import { defineComponent, onMounted, ref, watch } from "vue";
+import { defineComponent, onMounted, ref, watch, PropType } from "vue";
 import { useInview } from "../../composables";
 import UISliderItem from "./UISliderItem.vue";
+import { Slide } from "./UISlider.model";
 import useSlider from "./useSlider";
 
 export default defineComponent({
+  props: {
+    slides: {
+      type: Array as PropType<Slide[]>,
+      default: () => [],
+      required: true,
+    },
+  },
   components: {
     UISliderItem,
   },
-  setup() {
+  setup(props) {
     const slider = ref();
     const {
       settings,
@@ -68,56 +76,7 @@ export default defineComponent({
       dot: "ui-slider__dot",
     });
 
-    defineSlides([
-      {
-        background: "primary",
-        color: "background",
-        image:
-          "https://images.unsplash.com/photo-1560961911-a21c4f35443f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2748&q=80",
-        content: {
-          title: "First Slide",
-          subtitle: "Another slide on the wall",
-          description:
-            "Phasellus sollicitudin arcu sit amet risus ultrices pharetra. Vestibulum eu volutpat mauris. Ut eu tortor gravida, tempor diam ac, suscipit lectus. Donec quis ullamcorper ipsum, sit amet rutrum dolor. Vestibulum non nibh magna. Cras ultrices volutpat mi vel pellentesque. Etiam eu sem quis elit consequat fringilla a euismod erat. ",
-        },
-      },
-      {
-        background: "secondary",
-        color: "foreground",
-        image:
-          "https://images.unsplash.com/photo-1560961911-ba7ef651a56c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2748&q=80",
-        content: {
-          title: "Second Slide",
-          subtitle: "Another slide on the wall",
-          description:
-            "Phasellus sollicitudin arcu sit amet risus ultrices pharetra. Vestibulum eu volutpat mauris. Ut eu tortor gravida, tempor diam ac, suscipit lectus. Donec quis ullamcorper ipsum, sit amet rutrum dolor. Vestibulum non nibh magna. Cras ultrices volutpat mi vel pellentesque. Etiam eu sem quis elit consequat fringilla a euismod erat. ",
-        },
-      },
-      {
-        background: "warning",
-        color: "background",
-        image:
-          "https://images.unsplash.com/photo-1560961911-293cfd783727?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2748&q=80",
-        content: {
-          title: "Third Slide",
-          subtitle: "Another slide on the wall",
-          description:
-            "Phasellus sollicitudin arcu sit amet risus ultrices pharetra. Vestibulum eu volutpat mauris. Ut eu tortor gravida, tempor diam ac, suscipit lectus. Donec quis ullamcorper ipsum, sit amet rutrum dolor. Vestibulum non nibh magna. Cras ultrices volutpat mi vel pellentesque. Etiam eu sem quis elit consequat fringilla a euismod erat. ",
-        },
-      },
-      {
-        background: "foreground",
-        color: "background",
-        image:
-          "https://images.unsplash.com/photo-1560961911-0ac252fecc71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2748&q=80",
-        content: {
-          title: "Last Slide",
-          subtitle: "Another slide on the wall",
-          description:
-            "Phasellus sollicitudin arcu sit amet risus ultrices pharetra. Vestibulum eu volutpat mauris. Ut eu tortor gravida, tempor diam ac, suscipit lectus. Donec quis ullamcorper ipsum, sit amet rutrum dolor. Vestibulum non nibh magna. Cras ultrices volutpat mi vel pellentesque. Etiam eu sem quis elit consequat fringilla a euismod erat. ",
-        },
-      },
-    ]);
+    defineSlides(props.slides);
 
     const { isInview, setInviewElement } = useInview();
     onMounted(() => {
