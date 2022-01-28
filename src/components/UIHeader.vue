@@ -56,7 +56,7 @@ export default defineComponent({
   z-index: 3;
 
   opacity: 0;
-  transform: translateY(var(--space));
+  transform: translateY(calc(var(--space) * -1));
   animation: headerFadeIn 1s 2s ease-in-out forwards;
   color: var(--background);
 
