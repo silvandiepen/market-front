@@ -38,7 +38,7 @@
     transform: translateX(-50%);
     display: flex;
     font-size: 1em;
-    padding: calc(var(--space) / 2);
+    padding: var(--half-space);
   }
   &__dot {
     margin: 0;
@@ -120,7 +120,7 @@
     }
   }
   &__content-container {
-    padding: calc(var(--space) / 2);
+    padding: var(--half-space);
     width: var(--container-width);
     margin: auto;
   }

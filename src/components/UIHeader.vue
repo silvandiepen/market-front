@@ -84,7 +84,7 @@ export default defineComponent({
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: calc(var(--space) / 4) calc(var(--space) / 2);
+    padding: calc(var(--half-space) / 2) var(--half-space);
     // border: 1px solid blue;
     width: var(--container-width);
     margin: auto;

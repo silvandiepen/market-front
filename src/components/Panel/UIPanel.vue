@@ -120,7 +120,7 @@ export default defineComponent({
     }
   }
   .column {
-    padding: calc(var(--space) / 2);
+    padding: var(--half-space);
     opacity: 0;
     transform: translateY(var(--space));
     @for $i from 1 through 9 {

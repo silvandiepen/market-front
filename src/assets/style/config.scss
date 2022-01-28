@@ -6,6 +6,7 @@ $config: (
   primary: #02c652,
   secondary: #f1f2f3,
   space: max(2em, calc(100vw / 24)),
+  half-space: max(2em, calc(var(--space) / 2)),
   max-width: 1200px,
   container-width: min(100%, var(--max-width)),
   error: red,

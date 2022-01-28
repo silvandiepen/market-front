@@ -19,7 +19,7 @@ export default defineComponent({
     // display: flex;
     // justify-content: space-between;
     // align-items: flex-end;
-    padding: calc(var(--space) / 2);
+    padding: var(--half-space);
 
     display: grid;
     grid-template-rows: repeat(4, 1fr);
@@ -35,7 +35,7 @@ export default defineComponent({
   }
 
   .ui-image {
-    padding: calc(var(--space) / 2);
+    padding: var(--half-space);
   }
   .ui-description {
     display: flex;
