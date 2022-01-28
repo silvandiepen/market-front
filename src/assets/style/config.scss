@@ -1,0 +1,18 @@
+@use "sass:map";
+
+$config: (
+  background: #fff,
+  foreground: #1a1a1a,
+  primary: #02c652,
+  secondary: #f1f2f3,
+  space: max(2em, calc(100vw / 24)),
+  max-width: 1200px,
+  container-width: min(100%, var(--max-width)),
+  error: red,
+  warning: orange,
+  notification: blue,
+);
+
+@function getConfig($key) {
+  @return map.get($config, $key);
+}
