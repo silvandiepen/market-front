@@ -38,6 +38,7 @@ export default defineComponent({
   background-color: var(--button-background-color);
   color: var(--button-color);
   display: inline-block;
+  text-decoration: none;
 
   &:before {
     content: "";
@@ -72,7 +73,6 @@ export default defineComponent({
       clip-path: inset(0 0 0 0%);
     }
   }
-
   &__text {
     font-size: 1.25em;
     position: relative;
