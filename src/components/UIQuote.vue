@@ -45,7 +45,7 @@ export default defineComponent({
 <style lang="scss">
 .ui-quote {
   $block: &;
-  padding: var(--space);
+  padding: calc(var(--space) * 2);
 
   &__container {
     color: var(--foreground);

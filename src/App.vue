@@ -118,7 +118,7 @@ export default defineComponent({
           title: "Second Slide",
           subtitle: "Another slide on the wall",
           description:
-            "Phasellus sollicitudin arcu sit amet risus ultrices pharetra. Vestibulum eu volutpat mauris. Ut eu tortor gravida, tempor diam ac, suscipit lectus. Donec quis ullamcorper ipsum, sit amet rutrum dolor. Vestibulum non nibh magna. Cras ultrices volutpat mi vel pellentesque. Etiam eu sem quis elit consequat fringilla a euismod erat. ",
+            "Phasellus sollicitudin arcu sit amet risus ultrices pharetra. Vestibulum eu volutpat mauris.",
         },
       },
       {
@@ -130,7 +130,7 @@ export default defineComponent({
           title: "Third Slide",
           subtitle: "Another slide on the wall",
           description:
-            "Phasellus sollicitudin arcu sit amet risus ultrices pharetra. Vestibulum eu volutpat mauris. Ut eu tortor gravida, tempor diam ac, suscipit lectus. Donec quis ullamcorper ipsum, sit amet rutrum dolor. Vestibulum non nibh magna. Cras ultrices volutpat mi vel pellentesque. Etiam eu sem quis elit consequat fringilla a euismod erat. ",
+            "Vestibulum eu volutpat mauris. Ut eu tortor gravida, tempor diam ac, suscipit lectus. Donec quis ullamcorper ipsum, sit amet rutrum dolor. Vestibulum non nibh magna. Cras ultrices volutpat mi vel pellentesque. Etiam eu sem quis elit consequat fringilla a euismod erat. ",
         },
       },
       {
@@ -142,7 +142,7 @@ export default defineComponent({
           title: "Last Slide",
           subtitle: "Another slide on the wall",
           description:
-            "Phasellus sollicitudin arcu sit amet risus ultrices pharetra. Vestibulum eu volutpat mauris. Ut eu tortor gravida, tempor diam ac, suscipit lectus. Donec quis ullamcorper ipsum, sit amet rutrum dolor. Vestibulum non nibh magna. Cras ultrices volutpat mi vel pellentesque. Etiam eu sem quis elit consequat fringilla a euismod erat. ",
+            " Donec quis ullamcorper ipsum, sit amet rutrum dolor. Vestibulum non nibh magna. Cras ultrices volutpat mi vel pellentesque. Etiam eu sem quis elit consequat fringilla a euismod erat. ",
         },
       },
     ];

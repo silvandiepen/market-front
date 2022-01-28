@@ -13,6 +13,8 @@ export default defineComponent({
 </script>
 <style lang="scss">
 .ui-image-section {
+  z-index: 2;
+  position: relative;
   &__container {
     background-color: var(--foreground);
     color: var(--background);
@@ -21,7 +23,7 @@ export default defineComponent({
     // align-items: flex-end;
 
     // grid-template-columns: description image image image;
-    @media screen and (min-width: 720px) {
+    @media screen and (min-width: getConfig(max-width)) {
       padding: var(--half-space);
       display: grid;
       grid-template-rows: repeat(4, 1fr);
@@ -38,6 +40,10 @@ export default defineComponent({
 
   .ui-image {
     padding: var(--half-space);
+    @media screen and (min-width: getConfig(max-width)) {
+      margin-bottom: calc((var(--space) * 2) * -1);
+      margin-top: calc((var(--space) * 2) * -1);
+    }
   }
   .ui-description {
     display: flex;

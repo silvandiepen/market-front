@@ -25,15 +25,15 @@ export default defineComponent({
     justify-content: space-between;
     align-items: center;
 
-    width: var(--container-width);
+    // width: var(--container-width);
     margin: auto;
-    @media screen and (min-width: getConfig(max-width)) {
-      border-radius: var(--border-radius) var(--border-radius) 0 0;
-    }
+
+    border-radius: var(--border-radius);
 
     img {
       max-width: 100%;
       max-height: 100%;
+      width: 100%;
       border-radius: var(--border-radius);
     }
   }

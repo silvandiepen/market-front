@@ -94,7 +94,9 @@ export default defineComponent({
     align-items: center;
     width: var(--container-width);
     margin: auto;
-    padding: var(--space) 0;
+    @media screen and (min-width: getConfig(max-width)) {
+      padding: var(--space) 0;
+    }
   }
 
   .row {
