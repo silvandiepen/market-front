@@ -19,10 +19,10 @@ export default defineComponent({
     // display: flex;
     // justify-content: space-between;
     // align-items: flex-end;
-    padding: var(--half-space);
 
     // grid-template-columns: description image image image;
     @media screen and (min-width: 720px) {
+      padding: var(--half-space);
       display: grid;
       grid-template-rows: repeat(4, 1fr);
       grid-template: "description image image image image";
