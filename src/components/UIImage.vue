@@ -1,7 +1,7 @@
 <template>
   <div class="ui-image">
     <div class="ui-image__container">
-      <img v-if="src" :src="src" />
+      <img v-if="src" :src="src" alt="Some description" />
     </div>
   </div>
 </template>

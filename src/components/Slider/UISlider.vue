@@ -16,18 +16,21 @@
     <div class="ui-slider__controls">
       <div class="ui-slider__arrow-container ui-slider__arrow-container--prev">
         <button
+          aria-label="Previous slide"
           @click="prevSlide"
           class="ui-slider__arrow-button ui-slider__arrow-button--prev"
         ></button>
       </div>
       <div class="ui-slider__arrow-container ui-slider__arrow-container--next">
         <button
+          aria-label="Next slide"
           @click="nextSlide"
           class="ui-slider__arrow-button nui-slider__arrow-button--next"
         ></button>
       </div>
       <nav class="ui-slider__dots">
         <button
+          :aria-label="`Go to slide ${index}`"
           @click="goToSlide(index)"
           class="ui-slider__dot"
           v-for="(dot, index) in dots"
