@@ -21,10 +21,12 @@ export default defineComponent({
     // align-items: flex-end;
     padding: var(--half-space);
 
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
     // grid-template-columns: description image image image;
-    grid-template: "description image image image image";
+    @media screen and (min-width: 720px) {
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+      grid-template: "description image image image image";
+    }
   }
 
   .ui-image {
