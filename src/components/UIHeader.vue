@@ -49,24 +49,24 @@ export default defineComponent({
 </script>
 <style lang="scss">
 .ui-header {
+  $block: &;
   position: fixed;
   width: 100vw;
   top: 0;
   z-index: 3;
 
   opacity: 0;
-  animation: fadeIn 1s 2s ease-in-out forwards;
+  transform: translateY(var(--space));
+  animation: headerFadeIn 1s 2s ease-in-out forwards;
   color: var(--background);
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
-  &--hidden {
-    transform: translateY(-25%);
-    opacity: 0;
-  }
-
-  &--visible {
-    transform: translateY(0%);
-    opacity: 1;
+  @at-root {
+    @keyframes headerFadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   }
 
   &__logo {
@@ -76,6 +76,9 @@ export default defineComponent({
   &__menu {
   }
   &__container {
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
     background-color: var(--foreground);
 
     display: flex;
@@ -86,12 +89,21 @@ export default defineComponent({
     width: var(--container-width);
     margin: auto;
 
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    border-radius: 0;
 
     @media screen and (min-width: #{getConfig('max-width')}) {
       margin-top: calc(var(--space) / 4);
       border-radius: var(--border-radius);
     }
+  }
+  &--hidden #{$block}__container {
+    transform: translateY(-25%);
+    opacity: 0;
+  }
+
+  &--visible #{$block}__container {
+    transform: translateY(0%);
+    opacity: 1;
   }
 }
 </style>

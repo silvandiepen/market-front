@@ -105,6 +105,9 @@ export default defineComponent({
 
   .row {
     display: flex;
+    @media screen and (max-width: getConfig("max-width")) {
+      flex-direction: column;
+    }
   }
   .column {
     padding: calc(var(--space) / 2);

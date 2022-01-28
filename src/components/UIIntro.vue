@@ -37,7 +37,6 @@ export default defineComponent({
 
   h2 {
     font-size: var(--space);
-    gap: 0.33em;
     display: flex;
     animation: upALittle 1s 2s forwards ease-in-out;
 
@@ -53,6 +52,7 @@ export default defineComponent({
       opacity: 0;
       transform: translateY(100%);
       display: inline-block;
+      margin: 0.1em;
       &:nth-child(1) {
         animation: spanIn 1s 0s forwards ease-in-out;
       }

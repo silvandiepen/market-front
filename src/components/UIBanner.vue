@@ -48,6 +48,9 @@ export default defineComponent({
 <style lang="scss">
 .ui-banner {
   $block: &;
+  @media screen and (max-width: getConfig("max-width")) {
+    padding: var(--space);
+  }
   &__container {
     background-color: var(--primary);
     color: var(--background);
