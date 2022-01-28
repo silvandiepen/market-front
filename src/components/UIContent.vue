@@ -2,6 +2,8 @@
   <section id="content" class="ui-content">
     <div class="ui-content__container">
       <div class="content">
+        <h2>A content section</h2>
+        <h3>For instance for blogs, or just long content</h3>
         <p>
           Phasellus bibendum vitae massa sed ornare. Donec venenatis molestie
           lorem, eu bibendum lorem fermentum eget. Suspendisse ac fermentum
@@ -35,6 +37,7 @@
           neque. Mauris odio est, semper id augue a, consequat malesuada risus.
           Aenean in dui eget mi scelerisque semper.
         </p>
+        <h4>Sub section</h4>
         <p>
           Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam a
           ante sit amet lacus ornare hendrerit. In hac habitasse platea
@@ -119,6 +122,8 @@ export default defineComponent({
     width: var(--container-width);
     margin: auto;
     .content {
+      max-width: 720px;
+      margin: auto;
       padding: calc(var(--space) / 2);
     }
   }

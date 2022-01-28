@@ -1,5 +1,9 @@
 <template>
-  <section id="panel" class="ui-panel">
+  <section
+    :id="identifier"
+    class="ui-panel"
+    :class="`ui-panel--${visible ? 'visible' : 'hidden'}`"
+  >
     <div class="ui-panel__container">
       <div class="row">
         <div class="column">
@@ -61,10 +65,30 @@
   </section>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, watch, onMounted, ref } from "vue";
+import { useInview } from "../composables/useUI";
+
 export default defineComponent({
   setup() {
-    return {};
+    const { isInview, setInviewElement } = useInview();
+    const visible = ref(false);
+    const identifier = `panel-${Math.ceil(Math.random() * 1000)}`;
+
+    onMounted(() => {
+      setInviewElement(document.querySelector(`#${identifier}`));
+    });
+
+    watch(
+      () => isInview.value,
+      () => {
+        visible.value = isInview.value;
+      }
+    );
+
+    return {
+      identifier,
+      visible,
+    };
   },
 });
 </script>
@@ -76,7 +100,6 @@ export default defineComponent({
     align-items: center;
     width: var(--container-width);
     margin: auto;
-
     padding: var(--space) 0;
   }
 
@@ -85,6 +108,21 @@ export default defineComponent({
   }
   .column {
     padding: calc(var(--space) / 2);
+    opacity: 0;
+    transform: translateY(var(--space));
+    @for $i from 1 through 9 {
+      &:nth-child(#{$i}) {
+        transition: transform 0.3s calc(0.1s * #{$i}) ease-in-out,
+          opacity 0.3s calc(0.1s * #{$i}) ease-in-out;
+      }
+    }
+  }
+
+  &--visible {
+    .column {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 }
 </style>

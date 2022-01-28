@@ -1,5 +1,5 @@
 <template>
-  <nav class="navigation">
+  <nav class="ui-navigation">
     <UINavigationList :menu="menu" />
   </nav>
 </template>
@@ -21,24 +21,4 @@ export default defineComponent({
   },
 });
 </script>
-<style lang="scss">
-.navigation {
-  &__list {
-    display: flex;
-  }
-  &__item {
-  }
-  &__link {
-    display: block;
-    line-height: 1;
-    padding: 1em;
-    text-decoration: none;
-    color: inherit;
-    font-weight: 500;
-  }
-  &__text {
-    font-size: 1em;
-    font-family: var(--primary-font-family);
-  }
-}
-</style>
+<style lang="scss" src="./UINavigation.scss" />

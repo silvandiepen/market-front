@@ -23,6 +23,7 @@ export default defineComponent({
 
     width: var(--container-width);
     margin: auto;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
   }
 }
 </style>

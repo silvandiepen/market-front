@@ -7,6 +7,7 @@ import UIIntro from "./components/UIIntro.vue";
 import UIPanel from "./components/UIPanel.vue";
 import UISlider from "./components/Slider/UISlider.vue";
 import UIContent from "./components/UIContent.vue";
+import UIBanner from "./components/UIBanner.vue";
 
 export default defineComponent({
   components: {
@@ -14,6 +15,7 @@ export default defineComponent({
     UIFooter,
     UIIntro,
     UIPanel,
+    UIBanner,
     UISlider,
     UIContent,
   },
@@ -30,6 +32,8 @@ export default defineComponent({
     <UIPanel />
     <UISlider />
     <UIContent />
+    <UIBanner />
+    <UIPanel />
   </main>
   <UIFooter />
 </template>

@@ -11,6 +11,7 @@ $config: (
   error: red,
   warning: orange,
   notification: blue,
+  "border-radius": 4px,
 );
 
 @function getConfig($key) {

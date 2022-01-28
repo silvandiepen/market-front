@@ -1,7 +1,7 @@
 <template>
-  <li class="navigation__item">
-    <a class="navigation__link" :href="item.link">
-      <span class="navigation__text">{{ item.label }}</span>
+  <li class="ui-navigation__item">
+    <a class="ui-navigation__link" :href="item.link">
+      <span class="ui-navigation__text">{{ item.label }}</span>
     </a>
     <!-- <UINavigationList v-if="item.children.length" :menu="item.children" /> -->
   </li>

@@ -50,7 +50,7 @@ export default defineComponent({
 <style lang="scss">
 .ui-header {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0;
   z-index: 3;
 
@@ -69,20 +69,11 @@ export default defineComponent({
     opacity: 1;
   }
 
-  // @at-root {
-  //   @keyframes fadeIn {
-  //     to {
-  //       opacity: 0;
-  //     }
-  //   }
-  // }
-
   &__logo {
-    // border: 1px solid red;
     font-weight: 500;
+    font-size: 1.5em;
   }
   &__menu {
-    // border: 1px solid red;
   }
   &__container {
     background-color: var(--foreground);
@@ -94,8 +85,12 @@ export default defineComponent({
     // border: 1px solid blue;
     width: var(--container-width);
     margin: auto;
+
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+
     @media screen and (min-width: #{getConfig('max-width')}) {
       margin-top: calc(var(--space) / 4);
+      border-radius: var(--border-radius);
     }
   }
 }

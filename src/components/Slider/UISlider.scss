@@ -5,6 +5,8 @@
   align-items: center;
   justify-content: center;
   transition: clip-path 1s ease-in-out;
+  overflow: hidden;
+
   --slide-width: min(calc(100% - (var(--space) * 2)), var(--max-width));
   $slide-margin: calc((100vw - var(--slide-width)) / 2);
 
@@ -118,6 +120,7 @@
     z-index: 2;
     color: var(--slide-color);
     max-width: 50ch;
+    border-radius: var(--border-radius);
 
     background-color: var(--slide-background-color);
     color: var(--slide-color);

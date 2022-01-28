@@ -1,5 +1,5 @@
 <template>
-  <ul class="navigation__list">
+  <ul class="ui-navigation__list">
     <UINavigationItem v-for="(item, index) in menu" :key="index" :item="item" />
   </ul>
 </template>
