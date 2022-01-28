@@ -13,7 +13,7 @@ import UIImageSection from "./components/UIImageSection.vue";
 import UIImage from "./components/UIImage.vue";
 import UIDescription from "./components/UIDescription.vue";
 
-import { slides, columns1, columns2 } from "./mockData";
+import { slides, columns1, columns2, getDescription } from "./mockData";
 
 export default defineComponent({
   components: {
@@ -30,7 +30,7 @@ export default defineComponent({
     UIDescription,
   },
   setup() {
-    return { slides, columns1, columns2 };
+    return { slides, columns1, columns2, getDescription };
   },
 });
 </script>
@@ -48,70 +48,24 @@ export default defineComponent({
       <h2>A content section</h2>
       <h3>For instance for blogs, or just long content</h3>
       <p>
-        Phasellus bibendum vitae massa sed ornare. Donec venenatis molestie
-        lorem, eu bibendum lorem fermentum eget. Suspendisse ac fermentum ipsum.
-        Suspendisse aliquet, elit a hendrerit gravida, nulla mi posuere velit,
-        vitae vestibulum turpis dolor eget diam. Fusce lacinia justo augue,
-        vitae lacinia arcu pellentesque sit amet. Aliquam dolor nunc, imperdiet
-        sed convallis gravida, laoreet ut lacus. Aenean porta non tortor eget
-        dignissim. In auctor est sed luctus sollicitudin.
+        {{ getDescription(2) }}
       </p>
       <p>
-        Nulla pharetra dolor odio, vel sagittis sem scelerisque a. Proin
-        volutpat erat a nisi pharetra, id volutpat mi lobortis. Ut mattis ipsum
-        eu diam congue, sed vehicula tortor convallis. Donec efficitur, turpis
-        ut placerat ullamcorper, ex neque iaculis augue, aliquam vulputate nunc
-        nunc at ipsum. Etiam ullamcorper odio elit, sit amet laoreet augue
-        tempus at. Vestibulum ante ipsum primis in faucibus orci luctus et
-        ultrices posuere cubilia curae; Suspendisse viverra lorem quis est
-        dapibus, ac rhoncus ex tincidunt. Aenean ut orci iaculis, semper justo
-        eu, condimentum nunc. Vestibulum vitae eros arcu.
+        {{ getDescription(3) }}
       </p>
       <p>
-        Phasellus sollicitudin arcu sit amet risus ultrices pharetra. Vestibulum
-        eu volutpat mauris. Ut eu tortor gravida, tempor diam ac, suscipit
-        lectus. Donec quis ullamcorper ipsum, sit amet rutrum dolor. Vestibulum
-        non nibh magna. Cras ultrices volutpat mi vel pellentesque. Etiam eu sem
-        quis elit consequat fringilla a euismod erat. Aenean elit felis, laoreet
-        ac ultricies et, mollis eget sem. Vivamus feugiat dui tellus, nec
-        condimentum diam finibus posuere. Ut eu eros vel dui rhoncus sagittis
-        non vel ex. Etiam ornare eros eget nisi imperdiet consectetur. Etiam
-        augue risus, rutrum eu dolor in, eleifend tincidunt neque. Mauris odio
-        est, semper id augue a, consequat malesuada risus. Aenean in dui eget mi
-        scelerisque semper.
-      </p>
-      <h4>Sub section</h4>
-      <p>
-        Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam a
-        ante sit amet lacus ornare hendrerit. In hac habitasse platea dictumst.
-        Quisque vitae ligula leo. Donec porta turpis dolor, in ultrices mi
-        tincidunt at. Donec pretium vehicula risus, eget dictum turpis imperdiet
-        in. Morbi sed diam mi. Phasellus luctus vehicula nunc id dignissim. Sed
-        molestie lacinia sem, ac malesuada urna mollis sit amet. Proin nec lacus
-        eget purus rhoncus euismod.
+        {{ getDescription(2) }}
       </p>
 
+      <h4>Sub section</h4>
       <p>
-        Curabitur dignissim diam at augue venenatis viverra. Sed eget mi eu
-        turpis malesuada lobortis. Pellentesque metus dolor, venenatis vel nibh
-        non, volutpat imperdiet magna. Phasellus condimentum cursus tellus. Nam
-        egestas justo eget nunc egestas tempor. Ut sed est massa. Suspendisse
-        congue purus diam, porttitor posuere massa condimentum ac. Quisque
-        lacinia ante vel commodo pulvinar.
+        {{ getDescription(2) }}
       </p>
       <p>
-        Vestibulum aliquet mi et odio rutrum, sed egestas enim vestibulum.
-        Curabitur pellentesque ligula pulvinar, mattis dolor eget, mattis purus.
-        In mauris nunc, porta at ex et, molestie dignissim elit. Morbi ut erat
-        in magna tempus lacinia. Donec pharetra urna in maximus aliquam. Cras
-        tincidunt tellus congue lacus varius, sit amet luctus ante efficitur.
-        Vestibulum pretium lobortis neque sed maximus. Curabitur molestie
-        feugiat nulla, id pharetra elit tincidunt ac. Duis purus odio, facilisis
-        non varius non, fringilla vitae sapien. Phasellus molestie ex quis
-        fringilla tincidunt. Fusce tristique quis lorem mattis mattis. Interdum
-        et malesuada fames ac ante ipsum primis in faucibus. Vivamus viverra
-        ante porta eros tempus, a finibus velit dapibus. Etiam id nulla id
-        libero dignissim semper.
+        {{ getDescription(1) }}
+      </p>
+      <p>
+        {{ getDescription(1) }}
       </p>
     </UIContent>
     <UIBanner />
@@ -125,13 +79,9 @@ export default defineComponent({
     <UIImageSection>
       <UIDescription>
         <h2>Building a website is like playing with Lego</h2>
+        <p></p>
         <p>
-          Curabitur molestie feugiat nulla, id pharetra elit tincidunt ac. Duis
-          purus odio, facilisis non varius non, fringilla vitae sapien.
-          Phasellus molestie ex quis fringilla tincidunt. Fusce tristique quis
-          lorem mattis mattis. Interdum et malesuada fames ac ante ipsum primis
-          in faucibus. Vivamus viverra ante porta eros tempus, a finibus velit
-          dapibus. Etiam id nulla id libero dignissim semper.
+          {{ getDescription() }}
         </p>
       </UIDescription>
       <UIImage
