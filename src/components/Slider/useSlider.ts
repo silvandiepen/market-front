@@ -27,20 +27,20 @@ export default function () {
 
   const setSlideClasses = (newClasses: Partial<SlideClasses>) => {
     Object.keys(newClasses).forEach((key) => {
+      // @ts-ignore
       classes[key as SlideClassElements] =
         newClasses[key as SlideClassElements];
     });
   };
 
-  const slideClasses = (
-    prefix: string | undefined,
-    index: number
-  ): (string | boolean)[] => {
-    return [
-      isActiveSlide(index) && `${prefix}${classes.active}`,
-      isNextSlide(index) && `${prefix}${classes.next}`,
-      isPrevSlide(index) && `${prefix}${classes.prev}`,
-    ];
+  const slideClasses = (prefix: string, index: number): string[] => {
+    const classNames: string[] = [];
+
+    if (isActiveSlide(index)) classNames.push(`${prefix}${classes.active}`);
+    if (isNextSlide(index)) classNames.push(`${prefix}${classes.next}`);
+    if (isPrevSlide(index)) classNames.push(`${prefix}${classes.prev}`);
+
+    return classNames;
   };
 
   const slides = computed(() => {

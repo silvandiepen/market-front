@@ -10,9 +10,9 @@
     <div class="ui-slider__content-container">
       <div class="ui-slider__content">
         <div class="content">
-          <h2 v-if="slide.content.title">{{ slide.content.title }}</h2>
-          <h4 v-if="slide.content.subtitle">{{ slide.content.subtitle }}</h4>
-          <p v-if="slide.content.description">
+          <h2 v-if="slide?.content?.title">{{ slide.content.title }}</h2>
+          <h4 v-if="slide?.content?.subtitle">{{ slide.content.subtitle }}</h4>
+          <p v-if="slide?.content?.description">
             {{ slide.content.description }}
           </p>
         </div>

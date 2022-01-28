@@ -22,5 +22,5 @@ export enum SlideClassElements {
 }
 
 export type SlideClasses = {
-  [key in SlideClassElements]: string | undefined;
+  [key in SlideClassElements]: string;
 };
