@@ -1,5 +1,10 @@
 <template>
-  <component :is="tag" class="ui-button" :class="`ui-button--${variation}`">
+  <component
+    :is="tag"
+    class="ui-button"
+    :class="`ui-button--${variation}`"
+    :href="link"
+  >
     <span class="ui-button__text"><slot /></span>
   </component>
 </template>
