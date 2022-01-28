@@ -5,13 +5,13 @@
     :style="`--slide-background-color: var(--${slide.background}); --slide-color: var(--${slide.color})`"
   >
     <div class="ui-slider__image" v-if="slide.image">
-      <img :src="slide.image" />
+      <img :src="slide.image" alt="slider image" />
     </div>
     <div class="ui-slider__content-container">
       <div class="ui-slider__content">
         <div class="content">
           <h2 v-if="slide?.content?.title">{{ slide.content.title }}</h2>
-          <h4 v-if="slide?.content?.subtitle">{{ slide.content.subtitle }}</h4>
+          <h3 v-if="slide?.content?.subtitle">{{ slide.content.subtitle }}</h3>
           <p v-if="slide?.content?.description">
             {{ slide.content.description }}
           </p>
