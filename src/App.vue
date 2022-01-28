@@ -156,7 +156,7 @@ export default defineComponent({
   <UIHeader />
   <main id="container">
     <UIIntro
-      title="Welcome to Storefront"
+      title="Welcome-to Storefront"
       image="https://images.unsplash.com/photo-1498747324273-943f73ca00b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3648&q=80"
     />
     <UIPanel :columns="columns2" />

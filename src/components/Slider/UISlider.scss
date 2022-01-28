@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   transition: clip-path 1s ease-in-out;
-  // overflow: hidden;
+  overflow: hidden;
   z-index: 2;
 
   --slide-width: min(calc(100% - (var(--space) * 2)), var(--max-width));

@@ -16,19 +16,9 @@ export default defineComponent({
 <style lang="scss">
 .ui-description {
   &__container {
-    background-color: var(--foreground);
-    color: var(--background);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    height: fit-content;
+    align-self: flex-end;
     padding: var(--half-space);
-
-    width: var(--container-width);
-    margin: auto;
-    @media screen and (min-width: getConfig(max-width)) {
-      border-radius: var(--border-radius) var(--border-radius) 0 0;
-    }
   }
 }
 </style>

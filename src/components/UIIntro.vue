@@ -5,11 +5,13 @@
     :style="`--ui-intro-background-image: url(${image})`"
   >
     <div class="ui-intro__background"></div>
-    <h2>
-      <span v-for="(word, index) in title.split(' ')" :key="index">{{
-        word
-      }}</span>
-    </h2>
+    <div class="ui-intro__container">
+      <h2>
+        <span v-for="(word, index) in title.split('-')" :key="index">{{
+          word
+        }}</span>
+      </h2>
+    </div>
   </section>
 </template>
 <script lang="ts">
@@ -32,11 +34,13 @@ export default defineComponent({
 </script>
 <style lang="scss">
 .ui-intro {
-  // border: 1px solid red;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 720px) {
+    align-items: flex-end;
+  }
 
   background-color: var(--primary);
   color: var(--background);
@@ -45,6 +49,16 @@ export default defineComponent({
   clip-path: inset(0 0 0 0);
 
   animation: curtainUp 1s 2s forwards ease-in-out;
+
+  &__container {
+    padding: var(--half-space);
+
+    width: var(--container-width);
+    margin: auto;
+    @media screen and (min-width: getConfig(max-width)) {
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
+    }
+  }
 
   &__background {
     position: fixed;
@@ -56,6 +70,7 @@ export default defineComponent({
     background-image: var(--ui-intro-background-image);
     background-size: cover;
     mix-blend-mode: darken;
+    background-position: right;
   }
 
   @at-root {
@@ -69,18 +84,18 @@ export default defineComponent({
   h2 {
     font-size: var(--space);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     animation: upALittle 1s 2s forwards ease-in-out;
+
     @media screen and (max-width: 720px) {
-      flex-direction: column;
-      font-size: calc(var(--space) * 2);
+      font-size: calc(var(--space) * 1.5);
     }
 
     @at-root {
       @keyframes upALittle {
         to {
           opacity: 1;
-          transform: translateY(calc((var(--space) * 1) * -1));
+          transform: translateY(calc((var(--space) * 0.5) * -1));
         }
       }
     }
