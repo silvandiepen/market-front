@@ -74,7 +74,7 @@ export const getDescription = (maxLines = 0) => {
 
   return `${shuffleArray([...description])
     .slice(0, lines)
-    .join(" ")}::${maxLines}::${lines}`;
+    .join(" ")}`;
 };
 
 export const columns1: PanelColumn[] = [
@@ -133,7 +133,7 @@ export const slides: Slide[] = [
     content: {
       title: "First Slide",
       subtitle: "Another slide on the wall",
-      description: getDescription(),
+      description: getDescription(4),
     },
   },
   {
@@ -144,7 +144,7 @@ export const slides: Slide[] = [
     content: {
       title: "Second Slide",
       subtitle: "Another slide on the wall",
-      description: getDescription(),
+      description: getDescription(3),
     },
   },
   {
@@ -155,7 +155,7 @@ export const slides: Slide[] = [
     content: {
       title: "Third Slide",
       subtitle: "Another slide on the wall",
-      description: getDescription(),
+      description: getDescription(2),
     },
   },
   {
@@ -166,7 +166,7 @@ export const slides: Slide[] = [
     content: {
       title: "Last Slide",
       subtitle: "Another slide on the wall",
-      description: getDescription(),
+      description: getDescription(4),
     },
   },
 ];

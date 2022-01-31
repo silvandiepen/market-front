@@ -48,10 +48,10 @@ export default defineComponent({
       <h2>A content section</h2>
       <h3>For instance for blogs, or just long content</h3>
       <p>
-        {{ getDescription(2) }}
+        {{ getDescription(3) }}
       </p>
       <p>
-        {{ getDescription(3) }}
+        {{ getDescription(5) }}
       </p>
       <p>
         {{ getDescription(2) }}
@@ -59,13 +59,13 @@ export default defineComponent({
 
       <h4>Sub section</h4>
       <p>
-        {{ getDescription(2) }}
+        {{ getDescription(5) }}
       </p>
       <p>
-        {{ getDescription(1) }}
+        {{ getDescription(3) }}
       </p>
       <p>
-        {{ getDescription(1) }}
+        {{ getDescription(5) }}
       </p>
     </UIContent>
     <UIBanner />
