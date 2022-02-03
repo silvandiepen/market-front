@@ -45,7 +45,7 @@ export default defineComponent({
   z-index: 3;
 
   opacity: 0;
-  transform: translateY(calc(var(--space) * -1));
+  transform: translateY(calc(#{v(space)} * -1));
   animation: headerFadeIn 1s 2s ease-in-out forwards;
   color: var(--background);
 
@@ -74,16 +74,16 @@ export default defineComponent({
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: calc(var(--half-space) / 2) var(--half-space);
+    padding: calc(#{v(half-space)} / 2) #{v(half-space)};
     // border: 1px solid blue;
-    width: var(--container-width);
+    width: #{v(container-width)};
     margin: auto;
 
     border-radius: 0;
 
     @media screen and (min-width: #{getConfig('max-width')}) {
-      margin-top: calc(var(--space) / 4);
-      border-radius: var(--border-radius);
+      margin-top: calc(#{v(space)} / 4);
+      border-radius: #{v(border-radius)};
     }
   }
   &--hidden #{$block}__container {
@@ -121,7 +121,7 @@ export default defineComponent({
         white-space: nowrap;
       }
       .ui-navigation__list--sub {
-        border-radius: var(--border-radius);
+        border-radius: #{v(border-radius)};
         padding: 1em;
         background-color: var(--background);
         color: var(--foreground);

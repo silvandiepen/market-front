@@ -33,19 +33,20 @@ export const menu: UINavigationMenuItem[] = [
   },
 ];
 function shuffleArray(array: string[]): string[] {
-  for (var i = array.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = array[i];
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    let temp = array[i];
     array[i] = array[j];
     array[j] = temp;
   }
   return array;
 }
-function randomBetween(min: number, max: number) {
+export const randomBetween = (min: number, max: number) => {
   // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min);
-}
-export const getDescription = (maxLines = 0) => {
+};
+
+export const getDescription = (maxLines = 0, totalParagraphs = 1): string => {
   const description = [
     "Fusce quis est eget nisi vestibulum feugiat in ut elit.",
     "Integer bibendum vulputate urna, ac tristique urna ornare id.",
@@ -70,17 +71,27 @@ export const getDescription = (maxLines = 0) => {
     "Aliquam gravida et purus quis pretium. Nulla eu tortor ac nunc auctor malesuada.",
   ];
 
-  const lines = maxLines || randomBetween(1, description.length);
+  //   const lines = maxLines || randomBetween(1, description.length);
+  const lines = maxLines;
 
-  return `${shuffleArray([...description])
-    .slice(0, lines)
-    .join(" ")}`;
+  const paragraphs = [];
+
+  for (let i = 0; i < totalParagraphs; i++) {
+    paragraphs.push(
+      `${shuffleArray([...description])
+        .slice(0, lines)
+        .join(" ")}`
+    );
+  }
+  return totalParagraphs > 1
+    ? paragraphs.map((p) => `<p>${p}</p>`).join("")
+    : paragraphs[0];
 };
 
 export const columns1: PanelColumn[] = [
   {
     title: "Woohoo",
-    description: getDescription(),
+    description: getDescription(4),
     action: {
       label: "Woohoo",
       link: "/link/to/woohoo",
@@ -88,7 +99,7 @@ export const columns1: PanelColumn[] = [
   },
   {
     title: "Yeahhh",
-    description: getDescription(),
+    description: getDescription(3),
     action: {
       label: "Yeahhh",
       link: "/link/to/yeahh",
@@ -96,7 +107,7 @@ export const columns1: PanelColumn[] = [
   },
   {
     title: "Go Go Go!",
-    description: getDescription(),
+    description: getDescription(4),
     action: {
       label: "Woohoo",
       link: "/link/to/gogogo",
@@ -105,22 +116,19 @@ export const columns1: PanelColumn[] = [
 ];
 export const columns2: PanelColumn[] = [
   {
-    image:
-      "https://images.unsplash.com/photo-1617663516011-cd60a0de811d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&q=80",
+    image: "img/photo-1472457897821-70d3819a0e24.jpg",
     title: "Woohoo",
-    description: getDescription(),
+    description: getDescription(3),
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1518331717677-3d0374dcfcd5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&q=80",
+    image: "img/photo-1518331717677-3d0374dcfcd5.jpg",
     title: "Yeahhh",
-    description: getDescription(),
+    description: getDescription(5),
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&q=80",
+    image: "img/photo-1617663516011-cd60a0de811d.jpg",
     title: "Go Go Go!",
-    description: getDescription(),
+    description: getDescription(4),
   },
 ];
 
@@ -128,8 +136,7 @@ export const slides: Slide[] = [
   {
     background: "foreground",
     color: "background",
-    image:
-      "https://images.unsplash.com/photo-1560961911-a21c4f35443f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80",
+    image: "img/slide1.jpg",
     content: {
       title: "First Slide",
       subtitle: "Another slide on the wall",
@@ -139,8 +146,7 @@ export const slides: Slide[] = [
   {
     background: "foreground",
     color: "background",
-    image:
-      "https://images.unsplash.com/photo-1560961911-ba7ef651a56c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80",
+    image: "img/slide2.jpg",
     content: {
       title: "Second Slide",
       subtitle: "Another slide on the wall",
@@ -150,8 +156,7 @@ export const slides: Slide[] = [
   {
     background: "foreground",
     color: "background",
-    image:
-      "https://images.unsplash.com/photo-1560961911-293cfd783727?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80",
+    image: "img/slide3.jpg",
     content: {
       title: "Third Slide",
       subtitle: "Another slide on the wall",
@@ -161,8 +166,7 @@ export const slides: Slide[] = [
   {
     background: "foreground",
     color: "background",
-    image:
-      "https://images.unsplash.com/photo-1560961911-0ac252fecc71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2400&q=80",
+    image: "img/slide4.jpg",
     content: {
       title: "Last Slide",
       subtitle: "Another slide on the wall",

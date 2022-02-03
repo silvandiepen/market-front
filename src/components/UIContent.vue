@@ -18,14 +18,14 @@ export default defineComponent({
 <style lang="scss">
 .ui-content {
   &__container {
-    padding: var(--half-space) 0;
+    padding: #{v(half-space)} 0;
     // border: 1px solid blue;
-    width: var(--container-width);
+    width: #{v(container-width)};
     margin: auto;
     .content {
       max-width: 720px;
       margin: auto;
-      padding: var(--half-space);
+      padding: #{v(half-space)};
     }
   }
 }

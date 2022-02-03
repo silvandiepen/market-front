@@ -8,7 +8,7 @@
   overflow: hidden;
   z-index: 2;
 
-  --slide-width: min(calc(100% - (var(--space) * 2)), var(--max-width));
+  --slide-width: min(calc(100% - (#{v(space)} * 2)), var(--max-width));
   $slide-margin: calc((100vw - var(--slide-width)) / 2);
 
   clip-path: inset(0 $slide-margin 0 $slide-margin);
@@ -39,7 +39,7 @@
     bottom: 0;
     display: flex;
     font-size: 1em;
-    padding: var(--half-space);
+    padding: #{v(half-space)};
     @media screen and (min-width: 720px) {
       right: 0;
     }
@@ -136,8 +136,8 @@
     }
   }
   &__content-container {
-    padding: var(--space);
-    width: var(--container-width);
+    padding: #{v(space)};
+    width: #{v(container-width)};
     margin: 0 auto 0 auto;
     padding-bottom: 3rem;
   }
@@ -147,15 +147,15 @@
     z-index: 2;
     color: var(--slide-color);
     max-width: 50ch;
-    border-radius: var(--border-radius);
+    border-radius: #{v(border-radius)};
 
     background-color: var(--slide-background-color);
     color: var(--slide-color);
-    padding: var(--space);
+    padding: #{v(space)};
   }
 
   &__arrow-container {
-    width: calc(var(--space) * 2);
+    width: calc(#{v(space)} * 2);
     height: 100%;
     position: absolute;
     top: 0;
@@ -179,8 +179,8 @@
   &__arrow-button {
     opacity: 0;
     transform: rotate(var(--arrow-rotate, 0)) scale(0.5);
-    width: var(--space);
-    height: var(--space);
+    width: #{v(space)};
+    height: #{v(space)};
     font-size: 1.5em;
     border-radius: 50%;
     background-color: var(--background);

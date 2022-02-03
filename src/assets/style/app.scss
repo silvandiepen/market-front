@@ -12,8 +12,8 @@ html {
   background-color: black;
 }
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: #{v(background)};
+  color: #{v(foreground)};
 }
 * {
   box-sizing: border-box;
@@ -37,16 +37,16 @@ ol {
   }
 }
 h1 {
-  font-size: max(calc(var(--space) / 1), 3rem);
+  font-size: max(calc(#{v(space)} / 1), 3rem);
 }
 h2 {
-  font-size: max(calc(var(--space) / 2), 2rem);
+  font-size: max(calc(#{v(space)} / 2), 2rem);
 }
 h3 {
-  font-size: max(calc(var(--space) / 3), 1.5rem);
+  font-size: max(calc(#{v(space)} / 3), 1.5rem);
 }
 h4 {
-  font-size: max(calc(var(--space) / 4), 1.2rem);
+  font-size: max(calc(#{v(space)} / 4), 1.2rem);
 }
 
 // Reset

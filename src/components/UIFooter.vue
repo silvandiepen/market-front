@@ -30,31 +30,31 @@ export default defineComponent({
     background-color: var(--foreground);
     color: var(--background);
 
-    width: var(--container-width);
+    width: #{v(container-width)};
     margin: auto;
 
     @media screen and (min-width: getConfig(mobile)) {
-      padding: var(--space);
+      padding: #{v(space)};
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
     }
     @media screen and (min-width: getConfig(max-width)) {
-      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      border-radius: #{v(border-radius)} #{v(border-radius)} 0 0;
     }
   }
   &__navigation {
     @media screen and (max-width: getConfig(mobile)) {
-      padding: calc(var(--space) - 1em);
+      padding: calc(#{v(space)} - 1em);
     }
     .ui-navigation__container > .ui-navigation__list {
-      gap: var(--space);
+      gap: #{v(space)};
     }
   }
   &__logo {
     @media screen and (max-width: getConfig(mobile)) {
-      background-color: var(--primary);
-      padding: var(--space);
+      background-color: #{v(primary)};
+      padding: #{v(space)};
     }
     h1 {
       font-weight: 500;

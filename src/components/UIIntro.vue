@@ -33,16 +33,20 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
+body {
+  perspective: 10px;
+}
 .ui-intro {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
   @media screen and (max-width: 720px) {
     align-items: flex-end;
   }
 
-  background-color: var(--primary);
+  background-color: #{v(primary)};
   color: var(--background);
   z-index: 2;
   position: relative;
@@ -51,51 +55,50 @@ export default defineComponent({
   animation: curtainUp 1s 2s forwards ease-in-out;
 
   &__container {
-    padding: var(--half-space);
+    padding: #{v(half-space)};
 
-    width: var(--container-width);
+    width: #{v(container-width)};
     margin: auto;
+
     @media screen and (min-width: getConfig(max-width)) {
-      border-radius: var(--border-radius) var(--border-radius) 0 0;
+      border-radius: #{v(border-radius)} #{v(border-radius)} 0 0;
     }
   }
 
   &__background {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
     background-image: var(--ui-intro-background-image);
     background-size: cover;
-    mix-blend-mode: darken;
-    background-position: right;
+    background-position: center center;
+    background-color: blue;
   }
 
   @at-root {
     @keyframes curtainUp {
       to {
-        clip-path: inset(0 0 calc((var(--space) * 3)) 0);
+        clip-path: inset(0 0 calc((#{v(space)} * 3)) 0);
       }
     }
   }
 
   h2 {
-    font-size: var(--space);
+    font-size: #{v(space)};
     display: flex;
     flex-direction: column;
     animation: upALittle 1s 2s forwards ease-in-out;
 
     @media screen and (max-width: 720px) {
-      font-size: calc(var(--space) * 1.5);
+      font-size: calc(#{v(space)} * 1.5);
     }
 
     @at-root {
       @keyframes upALittle {
         to {
           opacity: 1;
-          transform: translateY(calc((var(--space) * 0.5) * -1));
+          transform: translateY(calc((#{v(space)} * 0.5) * -1)) translateZ(20px);
         }
       }
     }
@@ -129,7 +132,7 @@ export default defineComponent({
   }
 
   & + .ui-panel {
-    margin-top: calc((var(--space) * 3) * -1);
+    margin-top: calc((#{v(space)} * 3) * -1);
   }
 }
 </style>

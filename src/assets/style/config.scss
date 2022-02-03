@@ -6,7 +6,7 @@ $config: (
   primary: #02c652,
   secondary: #f1f2f3,
   space: max(2em, calc(100vw / 24)),
-  half-space: max(2em, calc(var(--space) / 2)),
+  half-space: max(2em, calc(#{v(space)} / 2)),
   max-width: 1200px,
   mobile: 720px,
   container-width: min(100%, var(--max-width)),
@@ -18,4 +18,14 @@ $config: (
 
 @function getConfig($key) {
   @return map.get($config, $key);
+}
+
+@function v($key) {
+  $value: getConfig($key);
+
+  @if $value {
+    @return "var(--#{$key}, #{$value})";
+  } @else {
+    @return "var(--#{$key})";
+  }
 }

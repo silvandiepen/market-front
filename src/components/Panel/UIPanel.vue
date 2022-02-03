@@ -92,10 +92,10 @@ export default defineComponent({
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: var(--container-width);
+    width: #{v(container-width)};
     margin: auto;
     @media screen and (min-width: getConfig(max-width)) {
-      padding: var(--space) 0;
+      padding: #{v(space)} 0;
     }
   }
 
@@ -122,9 +122,9 @@ export default defineComponent({
     }
   }
   .column {
-    padding: var(--half-space);
+    padding: #{v(half-space)};
     opacity: 0;
-    transform: translateY(var(--space));
+    transform: translateY(#{v(space)});
     @for $i from 1 through 9 {
       &:nth-child(#{$i}) {
         transition: transform 0.3s calc(0.1s * #{$i}) ease-in-out,

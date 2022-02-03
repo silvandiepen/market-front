@@ -25,16 +25,16 @@ export default defineComponent({
     justify-content: space-between;
     align-items: center;
 
-    // width: var(--container-width);
+    // width: #{v(container-width)};
     margin: auto;
 
-    border-radius: var(--border-radius);
+    border-radius: #{v(border-radius)};
 
     img {
       max-width: 100%;
       max-height: 100%;
       width: 100%;
-      border-radius: var(--border-radius);
+      border-radius: #{v(border-radius)};
     }
   }
 }

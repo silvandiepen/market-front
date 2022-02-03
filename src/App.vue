@@ -13,6 +13,8 @@ import UIImageSection from "./components/UIImageSection.vue";
 import UIImage from "./components/UIImage.vue";
 import UIDescription from "./components/UIDescription.vue";
 
+import VHtml from "./components/VHtml.vue";
+
 import { slides, columns1, columns2, getDescription } from "./mockData";
 
 export default defineComponent({
@@ -28,6 +30,7 @@ export default defineComponent({
     UIImage,
     UIQuote,
     UIDescription,
+    VHtml,
   },
   setup() {
     return { slides, columns1, columns2, getDescription };
@@ -38,35 +41,17 @@ export default defineComponent({
 <template>
   <UIHeader />
   <main id="container">
-    <UIIntro
-      title="Welcome-to Storefront"
-      image="https://images.unsplash.com/photo-1498747324273-943f73ca00b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3648&q=80"
-    />
+    <UIIntro title="Welcome-to Storefront" image="img/intro.jpg" />
     <UIPanel :columns="columns2" />
     <UISlider :slides="slides" />
     <UIContent>
       <h2>A content section</h2>
       <h3>For instance for blogs, or just long content</h3>
-      <p>
-        {{ getDescription(3) }}
-      </p>
-      <p>
-        {{ getDescription(5) }}
-      </p>
-      <p>
-        {{ getDescription(2) }}
-      </p>
+
+      <v-html :html="getDescription(3, 3)" />
 
       <h4>Sub section</h4>
-      <p>
-        {{ getDescription(5) }}
-      </p>
-      <p>
-        {{ getDescription(3) }}
-      </p>
-      <p>
-        {{ getDescription(5) }}
-      </p>
+      <v-html :html="getDescription(3, 3)" />
     </UIContent>
     <UIBanner />
     <UIPanel :columns="[...columns1, ...columns1]" />
@@ -79,14 +64,9 @@ export default defineComponent({
     <UIImageSection>
       <UIDescription>
         <h2>Building a website is like playing with Lego</h2>
-        <p></p>
-        <p>
-          {{ getDescription() }}
-        </p>
+        <p>{{ getDescription(4) }}</p>
       </UIDescription>
-      <UIImage
-        src="https://images.unsplash.com/photo-1526505262320-81542978f63b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
-      />
+      <UIImage src="img/master.jpg" />
     </UIImageSection>
     <UIPanel :columns="[columns2[0], columns2[1]]" />
   </main>

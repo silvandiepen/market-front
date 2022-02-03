@@ -18,7 +18,7 @@ export default defineComponent({
   &__container {
     height: fit-content;
     align-self: flex-end;
-    padding: var(--half-space);
+    padding: #{v(half-space)};
   }
 }
 </style>

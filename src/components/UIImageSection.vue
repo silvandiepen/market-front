@@ -24,7 +24,7 @@ export default defineComponent({
 
     // grid-template-columns: description image image image;
     @media screen and (min-width: getConfig(max-width)) {
-      padding: var(--half-space);
+      padding: #{v(half-space)};
       display: grid;
       grid-template-rows: repeat(4, 1fr);
       grid-template: "description image image image image";
@@ -39,10 +39,10 @@ export default defineComponent({
   }
 
   .ui-image {
-    padding: var(--half-space);
+    padding: #{v(half-space)};
     @media screen and (min-width: getConfig(max-width)) {
-      margin-bottom: calc((var(--space) * 2) * -1);
-      margin-top: calc((var(--space) * 2) * -1);
+      margin-bottom: calc((#{v(space)} * 2) * -1);
+      margin-top: calc((#{v(space)} * 2) * -1);
     }
   }
   .ui-description {

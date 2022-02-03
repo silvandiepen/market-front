@@ -49,23 +49,23 @@ export default defineComponent({
 .ui-banner {
   $block: &;
   @media screen and (max-width: getConfig("max-width")) {
-    padding: var(--space);
+    padding: #{v(space)};
   }
   &__container {
-    background-color: var(--primary);
+    background-color: #{v(primary)};
     color: var(--background);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: calc(var(--space));
+    padding: calc(#{v(space)});
 
-    border-radius: var(--border-radius);
+    border-radius: #{v(border-radius)};
 
-    width: var(--container-width);
+    width: #{v(container-width)};
     margin: auto;
   }
   &__content {
-    transform: translateX(calc(var(--space) * 2));
+    transform: translateX(calc(#{v(space)} * 2));
     transition: transform 0.3s ease-in-out;
   }
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;

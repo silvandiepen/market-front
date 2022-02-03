@@ -31,7 +31,7 @@ export default defineComponent({
 .ui-button {
   padding: 1em 2em;
   line-height: 1;
-  border-radius: var(--border-radius);
+  border-radius: #{v(border-radius)};
   border: none;
   position: relative;
 
@@ -49,7 +49,7 @@ export default defineComponent({
     position: absolute;
     left: 0;
     top: 0;
-    border-radius: var(--border-radius);
+    border-radius: #{v(border-radius)};
     z-index: 0;
     clip-path: inset(0 0 0 100%);
     transition: clip-path 0.3s ease-in-out;
@@ -80,7 +80,7 @@ export default defineComponent({
   }
 
   &--primary {
-    --button-background-color: var(--primary);
+    --button-background-color: #{v(primary)};
     --button-color: var(--background);
   }
   &--secondary {

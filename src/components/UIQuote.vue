@@ -45,22 +45,22 @@ export default defineComponent({
 <style lang="scss">
 .ui-quote {
   $block: &;
-  padding: calc(var(--space) * 2);
+  padding: calc(#{v(space)} * 2);
 
   &__container {
     color: var(--foreground);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: calc(var(--space));
+    padding: calc(#{v(space)});
 
-    border-radius: var(--border-radius);
+    border-radius: #{v(border-radius)};
 
-    width: var(--container-width);
+    width: #{v(container-width)};
     margin: auto;
   }
   &__content {
-    transform: translateY(calc(var(--space) * 2));
+    transform: translateY(calc(#{v(space)} * 2));
     transition: transform 0.3s ease-in-out;
     font-size: 2em;
     text-align: center;
